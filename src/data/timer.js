@@ -39,15 +39,6 @@ const currentDate = Date.now();
 };
 
 
-
-
-
-
-
-
-
-
-
 function updateTimeFace({ days, hours, mins, secs }) {
     refs.days.textContent = `${days}`;
     refs.hours.textContent = `${hours}`;
