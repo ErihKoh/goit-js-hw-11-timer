@@ -32,7 +32,7 @@ const currentDate = Date.now();
     const time = this.targetDate - currentDate;
     const timeComponent = this.getTimeComponents(time);
     console.log(timeComponent);
-   //  this.updateTimeFace(timeComponent);
+    this.updateTimeFace(timeComponent);
  }, 1000);
     
  getTimeComponents(time) {
@@ -65,8 +65,9 @@ const timer1 = new CountdownTimer({
   targetDate: new Date('Nov 17, 2020'),
 });
 const timer2 = new CountdownTimer({
-  rootSelectorelector: '#timer-2',
+  rootSelector: '#timer-2',
   targetDate: new Date('Dec 17, 2020'),
 });
 
 console.log(timer1);
+// console.log(timer2);
