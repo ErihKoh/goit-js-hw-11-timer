@@ -11,7 +11,6 @@
 
 class CountdownTimer{
  constructor ({rootSelector, targetDate}) {
-   //   this.rootSelector = this._getRefs(rootSelector);
     this.targetDate = targetDate;
     this._refs = this._getRefs(rootSelector);
     }
@@ -55,7 +54,6 @@ const currentDate = Date.now();
     this._refs.mins.textContent = `${mins}`;
     this._refs.secs.textContent = `${secs}`;
 }
-    
 };
 
 
@@ -69,5 +67,5 @@ const timer2 = new CountdownTimer({
   targetDate: new Date('Dec 17, 2020'),
 });
 
-console.log(timer1);
-// console.log(timer2);
+// console.log(timer1);
+// // console.log(timer2);
