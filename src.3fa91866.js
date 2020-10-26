@@ -3,4 +3,4 @@ function e(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./data/timer");
 },{"./data/timer":"JNcL"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-11-color-switch/src.3fa91866.js.map
+//# sourceMappingURL=/goit-js-hw-11-timer/src.3fa91866.js.map
