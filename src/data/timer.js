@@ -1,14 +1,3 @@
-// const refs = {
-//     clockface: document.querySelector('#timer-1'),
-//     days: document.querySelector('span[data-value="days"]'),
-//     hours: document.querySelector('span[data-value="hours"]'),
-//     mins: document.querySelector('span[data-value="mins"]'),
-//     secs: document.querySelector('span[data-value="secs"]'),
-
-// };
-
-
-
 class CountdownTimer{
  constructor ({rootSelector, targetDate}) {
     this.targetDate = targetDate;
@@ -33,7 +22,8 @@ const currentDate = Date.now();
     console.log(timeComponent);
     this.updateTimeFace(timeComponent);
  }, 1000);
-    
+ 
+   
  getTimeComponents(time) {
     const days = this.pad(Math.floor(time / (1000 * 60 * 60 * 24)));
     const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
@@ -46,8 +36,7 @@ const currentDate = Date.now();
  pad(value) {
     return String(value).padStart(2, '0');
     }
-
-    
+   
  updateTimeFace({ days, hours, mins, secs }) {
     this._refs.days.textContent = `${days}`;
     this._refs.hours.textContent = `${hours}`;
