@@ -1,18 +1,27 @@
-const refs = {
-    clockface: document.querySelector('#timer-1'),
-    days: document.querySelector('span[data-value="days"]'),
-    hours: document.querySelector('span[data-value="hours"]'),
-    mins: document.querySelector('span[data-value="mins"]'),
-    secs: document.querySelector('span[data-value="secs"]'),
+// const refs = {
+//     clockface: document.querySelector('#timer-1'),
+//     days: document.querySelector('span[data-value="days"]'),
+//     hours: document.querySelector('span[data-value="hours"]'),
+//     mins: document.querySelector('span[data-value="mins"]'),
+//     secs: document.querySelector('span[data-value="secs"]'),
 
-};
+// };
 
 
 
 class CountdownTimer{
- constructor ({selector, targetDate}) {
-     this.selector = selector;
+ constructor ({rootSelector, targetDate}) {
+     this.rootSelector = this._getRefs(rootSelector);
      this.targetDate = targetDate;
+    }
+
+    _getRefs(selector) {
+        const refs = {};
+
+        refs.days = document.querySelector(`${selector} span[data-value="days"]`);
+        refs.hours = document.querySelector(`${selector} span[data-value="hours"]`);
+        refs.mins = document.querySelector(`${selector} span[data-value="mins"]`);
+        refs.secs = document.querySelector(`${selector} span[data-value="secs"]`);
     }
     
  intevalId = setInterval(() => {
@@ -20,7 +29,7 @@ const currentDate = Date.now();
     const time = this.targetDate - currentDate;
     const timeComponent = this.getTimeComponents(time);
     console.log(timeComponent);
-    updateTimeFace(timeComponent);
+    // updateTimeFace(timeComponent);
  }, 1000);
     
  getTimeComponents(time) {
@@ -39,14 +48,18 @@ const currentDate = Date.now();
 };
 
 
-function updateTimeFace({ days, hours, mins, secs }) {
-    refs.days.textContent = `${days}`;
-    refs.hours.textContent = `${hours}`;
-    refs.mins.textContent = `${mins}`;
-    refs.secs.textContent = `${secs}`;
-}
+// function updateTimeFace({ days, hours, mins, secs }) {
+//     refs.days.textContent = `${days}`;
+//     refs.hours.textContent = `${hours}`;
+//     refs.mins.textContent = `${mins}`;
+//     refs.secs.textContent = `${secs}`;
+// }
 
-const timer = new CountdownTimer({
+const timer1 = new CountdownTimer({
   selector: '#timer-1',
   targetDate: new Date('Nov 17, 2020'),
+});
+const timer2 = new CountdownTimer({
+  selector: '#timer-2',
+  targetDate: new Date('Dec 17, 2020'),
 });
